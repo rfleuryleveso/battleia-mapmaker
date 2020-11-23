@@ -8,6 +8,8 @@ namespace BattleIAMapMaker
 {
     static class Program
     {
+        public static Form1 mainForm;
+        public static Map map;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -17,9 +19,13 @@ namespace BattleIAMapMaker
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            map = new Map(50, 50);
+            mainForm = new Form1();
+            mainForm.displayGrid();
+            Application.Run(mainForm);
+
         }
 
-        public static Map map = new Map(50,50);
+        
     }
 }

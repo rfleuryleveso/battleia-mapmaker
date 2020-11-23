@@ -1,6 +1,6 @@
 ﻿namespace BattleIAMapMaker
 {
-    enum MapTileType
+    public enum MapTileType
     {
         VOID = 0x1,
         WALL = 0x2,

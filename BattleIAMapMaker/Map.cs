@@ -12,15 +12,21 @@ namespace BattleIAMapMaker
         public Map(int size_x, int size_y)
         {
             this.size = (size_x, size_y);
+            this.regenMap();           
+        }
 
+        public void regenMap()
+        {
+            (int size_x, int size_y) = this.size;
             // Fill the v̵̱̜̮̲̜͌͐̎̉̔̓̉͂̚͝ǫ̷̛͎̭̟͆̽͒̐͒͛̈̏̑͂̚̕͘i̶̻̙͖̾͌̔͒͌̋̑͐͑́͑̄d̵̦̙͍̩̩͇͓̅̓
-            for(int i_x =0; i_x < size_x; i_x++)
+            for (int i_x = 0; i_x < size_x; i_x++)
             {
                 List<MapTile> column = new List<MapTile>();
                 for (int i_y = 0; i_y < size_y; i_y++)
                 {
                     column.Add(new MapTile(i_x, i_y, MapTileType.VOID));
                 }
+                this.map.Add(column);
             }
         }
     }
