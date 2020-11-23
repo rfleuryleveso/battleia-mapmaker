@@ -45,6 +45,7 @@ namespace BattleIAMapMaker
         public void clickEvent(object sender, EventArgs e)
         {
             this.BackColor = colorFromComboIndex(Program.mainForm.comboBox1.SelectedIndex);
+            Program.map.map[this.x][this.y].setTileType((MapTileType)Program.mainForm.comboBox1.SelectedIndex);
         }
     }
 }

@@ -58,5 +58,31 @@ namespace BattleIAMapMaker
             Program.map.regenMap();
             Program.mainForm.displayGrid();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String serializedMap = Program.map.serializeMap();
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "text file|*.txt";
+            saveFileDialog1.Title = "Save a map File";
+            saveFileDialog1.ShowDialog();
+
+            // If the file name is not an empty string open it for saving.
+            if (saveFileDialog1.FileName != "")
+            {
+                // Saves the Image via a FileStream created by the OpenFile method.
+                System.IO.FileStream fs =
+                    (System.IO.FileStream)saveFileDialog1.OpenFile();
+                ASCIIEncoding ascii = new ASCIIEncoding();
+
+                int byteCount = ascii.GetByteCount(serializedMap.ToCharArray(), 0, serializedMap.Length);
+                Byte[]  bytes = new Byte[byteCount];
+                int bytesEncodedCount = ascii.GetBytes(serializedMap.ToCharArray(), 0, serializedMap.Length, bytes, 0);
+                fs.Write(bytes);
+
+
+                fs.Close();
+            }
+        }
     }
 }
