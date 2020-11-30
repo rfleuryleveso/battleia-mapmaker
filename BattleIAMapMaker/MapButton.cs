@@ -44,11 +44,11 @@ namespace BattleIAMapMaker
             {
                 case MapTileType.VOID:
                     return 0;
-                case MapTileType.BOT:
+                case MapTileType.OUR_BOT:
                     return 1;
                 case MapTileType.WALL:
                     return 2;
-                case MapTileType.ENNEMY:
+                case MapTileType.ENEMY:
                     return 3;
                 case MapTileType.ENERGY:
                     return 4;
