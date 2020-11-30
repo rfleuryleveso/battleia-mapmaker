@@ -35,9 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +110,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Paint settings";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(7, 62);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 29);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Gen borders";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -121,7 +131,7 @@
             "ENERGY",
             "RESPAWN",
             "RETURN_TO_START",
-            "FACE_FINISH",
+            "RACE_FINISH",
             "SPAWN_T1",
             "SPAWN_T2",
             "POISON"});
@@ -139,16 +149,6 @@
             this.button3.Text = "Export map";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(7, 62);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Gen borders";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
