@@ -17,7 +17,7 @@ namespace BattleIAMapMaker
             InitializeComponent();
         }
 
-        MapButton[] buttons = new MapButton[0];
+        List<MapButton> buttons = new List<MapButton>();
 
         public void displayGrid()
         {
@@ -26,14 +26,15 @@ namespace BattleIAMapMaker
             int buttonHeight = this.groupBox1.Height / size_y;
 
             this.groupBox1.Controls.Clear();
-            this.buttons = new MapButton[size_x * size_y];
+            this.buttons = new List<MapButton>();
             for (int i_x = 0; i_x < size_x; i_x++)
             {
                 List<MapTile> column = Program.map.map[i_x];
                 for (int i_y = 0; i_y < size_y; i_y++)
                 {
                     int buttonId = (i_x * size_x) + i_y;
-                    MapButton cButton = this.buttons[buttonId] = new MapButton();
+                    MapButton cButton= new MapButton();
+                    this.buttons.Add(cButton);
 
                     cButton.Left = 5 + i_x * buttonWidth;
                     cButton.Top = 10 + i_y * buttonHeight;
