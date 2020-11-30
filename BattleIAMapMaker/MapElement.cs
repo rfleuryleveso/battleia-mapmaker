@@ -14,6 +14,7 @@ namespace BattleIAMapMaker
         RACE_FINISH = 0x7,
         SPAWN_T1= 0x8,
         SPAWN_T2 = 0x9,
+        POISON = 0xa,
         CUSTOM_T
     }
 

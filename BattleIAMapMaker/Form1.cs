@@ -39,7 +39,7 @@ namespace BattleIAMapMaker
                     cButton.Top = 10 + i_y * buttonHeight;
                     cButton.Width = buttonWidth;
                     cButton.Height = buttonHeight;
-                    cButton.BackColor = Color.Transparent;
+                    cButton.BackColor = MapButton.colorFromComboIndex(MapButton.comboIndexFromTileType(column[i_y].tileType));
                     int buttonX = i_x;
                     int buttonY = i_y;
                     cButton.x = i_x;
@@ -83,6 +83,28 @@ namespace BattleIAMapMaker
 
                 fs.Close();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            (int size_x, int size_y) = Program.map.size;
+            for (int i =0; i< size_x; i++)
+            {
+                Program.map.map[i][0].setTileType(MapTileType.WALL);
+            }
+            for (int i = 0; i < size_x; i++)
+            {
+                Program.map.map[i][size_y-1].setTileType(MapTileType.WALL);
+            }
+            for (int i = 0; i < size_y; i++)
+            {
+                Program.map.map[0][i].setTileType(MapTileType.WALL);
+            }
+            for (int i = 0; i < size_y; i++)
+            {
+                Program.map.map[size_x-1][i].setTileType(MapTileType.WALL);
+            }
+            Program.mainForm.displayGrid();
         }
     }
 }

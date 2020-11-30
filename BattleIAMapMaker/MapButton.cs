@@ -10,7 +10,7 @@ namespace BattleIAMapMaker
     class MapButton: Button
     {
 
-        static Color colorFromComboIndex(int index)
+        public static Color colorFromComboIndex(int index)
         {
             switch (index)
             {
@@ -37,6 +37,36 @@ namespace BattleIAMapMaker
                     var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(index.ToString()));
                     return Color.FromArgb(hash[0], hash[1], hash[2]);
             }  
+        }
+        public static int comboIndexFromTileType(MapTileType index)
+        {
+            switch (index)
+            {
+                case MapTileType.VOID:
+                    return 0;
+                case MapTileType.BOT:
+                    return 1;
+                case MapTileType.WALL:
+                    return 2;
+                case MapTileType.ENNEMY:
+                    return 3;
+                case MapTileType.ENERGY:
+                    return 4;
+                case MapTileType.RESPAWN:
+                    return 5;
+                case MapTileType.RETURN_TO_START:
+                    return 6;
+                case MapTileType.RACE_FINISH:
+                    return 7;
+                case MapTileType.SPAWN_T1:
+                    return 8;
+                case MapTileType.SPAWN_T2:
+                    return 9;
+                case MapTileType.POISON:
+                    return 10;
+                default:
+                    return 999;
+            }
         }
 
         public int x = 0;
