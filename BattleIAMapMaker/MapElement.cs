@@ -5,10 +5,10 @@ namespace BattleIAMapMaker
     public enum MapTileType: byte
     {
         VOID = 0x0,
-        WALL = 0x1,
-        ENERGY = 0x2,
-        BOT = 0x3,
-        ENNEMY = 0x4,
+        OUR_BOT= 0x1,
+        WALL = 0x2,
+        ENERGY = 0x3,
+        ENEMY = 0x4,
         RESPAWN = 0x5,
         RETURN_TO_START = 0x6,
         RACE_FINISH = 0x7,
